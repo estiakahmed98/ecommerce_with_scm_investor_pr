@@ -1,0 +1,958 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* ========================
+     ECOMMERCE COLOR PALETTE - LIGHT MODE
+     Palette: #25671E (deep green), #48A111 (vivid green), #F2B50B (golden amber), #F7F0F0 (warm white)
+  ======================== */
+
+    /* Core Colors */
+    --background: 0 0% 97%; /* #F7F0F0 warm white */
+    --foreground: 120 48% 13%; /* #25671E-based dark */
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 48% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 48% 13%;
+
+    /* Primary — Vivid Green #48A111 */
+    --primary: 100 80% 35%; /* #48A111 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary — Deep Forest Green #25671E */
+    --secondary: 116 51% 26%; /* #25671E */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted Colors */
+    --muted: 0 18% 95%; /* warm tint of #F7F0F0 */
+    --muted-foreground: 116 20% 30%;
+
+    /* Accent — Golden Amber #F2B50B */
+    --accent: 44 93% 49%; /* #F2B50B */
+    --accent-foreground: 120 48% 10%;
+
+    /* Destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 100 20% 80%;
+    --input: 100 20% 80%;
+    --ring: 100 80% 35%;
+
+    --radius: 0.5rem;
+
+    /* Charts */
+    --chart-1: 100 80% 35%;   /* vivid green */
+    --chart-2: 44 93% 49%;    /* golden amber */
+    --chart-3: 116 51% 26%;   /* deep green */
+    --chart-4: 44 70% 60%;    /* light amber */
+    --chart-5: 100 55% 50%;   /* mid green */
+
+    /* Scrollbar */
+    --scrollbar-thumb: 100 80% 35%;
+    --scrollbar-track: 0 18% 93%;
+    --scrollbar-thumb-hover: 116 51% 26%;
+
+    /* Analytics */
+    --analytics-primary: 100 80% 35%;
+    --analytics-secondary: 0 18% 95%;
+    --analytics-accent: 44 93% 49%;
+    --analytics-chart-1: 100 80% 35%;
+    --analytics-chart-2: 44 93% 49%;
+    --analytics-chart-3: 116 51% 26%;
+    --analytics-chart-4: 44 70% 60%;
+    --analytics-chart-5: 100 55% 50%;
+
+    /* Best Seller & Sold Badge */
+    --best-seller-bg: 100 80% 35%;
+    --best-seller-text: 0 0% 100%;
+    --sold-count-bg: 44 93% 49%;
+    --sold-count-text: 120 48% 10%;
+    --badge-shadow: 0 4px 6px -1px rgb(72 161 17 / 0.25);
+
+    /* Delivery Proof */
+    --delivery-proof-bg: 100 80% 35%;
+    --delivery-proof-text: 0 0% 100%;
+    --delivery-pin-bg: 0 18% 93%;
+    --delivery-pin-text: 120 48% 13%;
+    --delivery-pin-value: 120 48% 13%;
+    --delivery-link-bg: 0 18% 93%;
+    --delivery-link-text: 116 51% 26%;
+    --delivery-status-bg: 0 0% 100%;
+    --delivery-status-text: 120 20% 25%;
+
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, #25671E, #48A111);
+    --gradient-soft: linear-gradient(135deg, #f0f7ee, #fffbe6);
+    --gradient-premium: linear-gradient(135deg, #2d7a22, #5cc418);
+    --gradient-amber: linear-gradient(135deg, #e6a800, #F2B50B);
+
+    /* Delivery Summary Card Colors */
+    --delivery-card-assigned: 208 100% 96%;
+    --delivery-card-accepted: 100 68% 93%;
+    --delivery-card-rejected: 0 100% 95%;
+    --delivery-card-picked: 44 93% 92%;
+    --delivery-card-in-transit: 266 100% 96%;
+    --delivery-card-delivered: 116 76% 92%;
+
+    /* Stock Management Card Colors */
+    --stock-card-physical-products: 210 38% 96%;
+    --stock-card-variants: 100 68% 93%;
+    --stock-card-total-stock: 116 76% 92%;
+    --stock-card-low-stock: 44 93% 92%;
+    --stock-card-out-of-stock: 0 100% 95%;
+  }
+
+  /* ========================
+     DARK MODE
+  ======================== */
+
+  .dark {
+    --background: 120 15% 8%;
+    --foreground: 0 18% 96%;
+
+    --card: 120 12% 11%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 120 12% 11%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 100 80% 45%;
+    --primary-foreground: 120 48% 8%;
+
+    --secondary: 120 10% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 120 8% 16%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 44 93% 49%;
+    --accent-foreground: 120 48% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 10% 22%;
+    --input: 120 10% 22%;
+    --ring: 100 80% 45%;
+
+    --chart-1: 100 80% 55%;
+    --chart-2: 44 93% 55%;
+    --chart-3: 116 51% 45%;
+    --chart-4: 44 70% 65%;
+    --chart-5: 100 55% 60%;
+
+    /* Scrollbar Colors */
+    --scrollbar-thumb: 100 60% 40%;
+    --scrollbar-track: 120 12% 12%;
+    --scrollbar-thumb-hover: 100 80% 50%;
+
+    /* Analytics Theme Colors */
+    --analytics-primary: 100 80% 45%;
+    --analytics-secondary: 120 10% 18%;
+    --analytics-accent: 44 93% 55%;
+    --analytics-chart-1: 100 80% 55%;
+    --analytics-chart-2: 44 93% 55%;
+    --analytics-chart-3: 116 51% 45%;
+    --analytics-chart-4: 44 70% 65%;
+    --analytics-chart-5: 100 55% 60%;
+
+    /* Best Seller & Sold Badge Theme - Dark Mode */
+    --best-seller-bg: 100 80% 45%;
+    --best-seller-text: 120 48% 8%;
+    --sold-count-bg: 44 93% 49%;
+    --sold-count-text: 120 48% 8%;
+    --badge-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+
+    /* Delivery Proof Theme - Dark Mode */
+    --delivery-proof-bg: 100 80% 45%;
+    --delivery-proof-text: 120 48% 8%;
+    --delivery-pin-bg: 120 8% 16%;
+    --delivery-pin-text: 0 18% 96%;
+    --delivery-link-bg: 120 8% 16%;
+    --delivery-link-text: 100 80% 55%;
+    --delivery-status-bg: 120 12% 11%;
+    --delivery-status-text: 0 0% 70%;
+
+    /* Delivery Summary Card Colors - Dark Mode */
+    --delivery-card-assigned: 210 38% 22%;
+    --delivery-card-accepted: 100 68% 22%;
+    --delivery-card-rejected: 0 70% 22%;
+    --delivery-card-picked: 44 93% 20%;
+    --delivery-card-in-transit: 266 100% 22%;
+    --delivery-card-delivered: 116 76% 20%;
+
+    /* Stock Management Card Colors - Dark Mode */
+    --stock-card-physical-products: 210 38% 18%;
+    --stock-card-variants: 100 68% 18%;
+    --stock-card-total-stock: 116 76% 18%;
+    --stock-card-low-stock: 44 93% 18%;
+    --stock-card-out-of-stock: 0 70% 18%;
+  }
+
+  /* ========================
+   NAVY MIRAGE THEME
+======================== */
+
+  .navy,
+  .theme-navy {
+    --background: 214 44% 14%;
+    --foreground: 0 0% 98%;
+
+    --card: 213 40% 18%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 213 40% 18%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 100 80% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 30% 22%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 214 25% 25%;
+    --muted-foreground: 0 0% 80%;
+
+    --accent: 44 93% 49%;
+    --accent-foreground: 120 48% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 25% 30%;
+    --input: 214 25% 30%;
+    --ring: 100 80% 35%;
+
+    /* Scrollbar Colors */
+    --scrollbar-thumb: 100 80% 40%;
+    --scrollbar-track: 214 44% 10%;
+    --scrollbar-thumb-hover: 100 80% 50%;
+
+    /* Analytics Theme Colors */
+    --analytics-primary: 100 80% 35%;
+    --analytics-secondary: 214 30% 22%;
+    --analytics-accent: 44 93% 49%;
+    --analytics-chart-1: 100 80% 50%;
+    --analytics-chart-2: 44 93% 55%;
+    --analytics-chart-3: 116 51% 40%;
+    --analytics-chart-4: 44 70% 60%;
+    --analytics-chart-5: 100 55% 55%;
+
+    /* Best Seller & Sold Badge Theme - Navy */
+    --best-seller-bg: 100 80% 35%;
+    --best-seller-text: 0 0% 100%;
+    --sold-count-bg: 44 93% 49%;
+    --sold-count-text: 120 48% 10%;
+    --badge-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+
+    /* Delivery Summary Card Colors - Navy */
+    --delivery-card-assigned: 210 38% 28%;
+    --delivery-card-accepted: 100 68% 28%;
+    --delivery-card-rejected: 0 70% 28%;
+    --delivery-card-picked: 44 93% 26%;
+    --delivery-card-in-transit: 266 100% 28%;
+    --delivery-card-delivered: 116 76% 26%;
+
+    /* Stock Management Card Colors - Navy */
+    --stock-card-physical-products: 210 38% 22%;
+    --stock-card-variants: 100 68% 22%;
+    --stock-card-total-stock: 116 76% 22%;
+    --stock-card-low-stock: 44 93% 20%;
+    --stock-card-out-of-stock: 0 70% 22%;
+  }
+
+  /* ========================
+   OBSIDIAN PLUM THEME
+======================== */
+
+  .plum,
+  .theme-plum {
+    --background: 285 24% 15%;
+    --foreground: 0 0% 98%;
+
+    --card: 285 20% 18%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 285 20% 18%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 100 80% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 285 18% 22%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 285 15% 28%;
+    --muted-foreground: 0 0% 80%;
+
+    --accent: 44 93% 49%;
+    --accent-foreground: 120 48% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 285 15% 30%;
+    --input: 285 15% 30%;
+    --ring: 100 80% 35%;
+
+    /* Scrollbar Colors */
+    --scrollbar-thumb: 100 80% 40%;
+    --scrollbar-track: 285 24% 10%;
+    --scrollbar-thumb-hover: 100 80% 50%;
+
+    /* Analytics Theme Colors */
+    --analytics-primary: 100 80% 35%;
+    --analytics-secondary: 285 18% 22%;
+    --analytics-accent: 44 93% 49%;
+    --analytics-chart-1: 100 80% 50%;
+    --analytics-chart-2: 44 93% 55%;
+    --analytics-chart-3: 116 51% 40%;
+    --analytics-chart-4: 44 70% 60%;
+    --analytics-chart-5: 100 55% 55%;
+
+    /* Best Seller & Sold Badge Theme - Plum */
+    --best-seller-bg: 100 80% 35%;
+    --best-seller-text: 0 0% 100%;
+    --sold-count-bg: 44 93% 49%;
+    --sold-count-text: 120 48% 10%;
+    --badge-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+  }
+
+  /* ========================
+   OLIVE DARK THEME
+======================== */
+
+  .olive,
+  .theme-olive {
+    --background: 116 20% 10%;
+    --foreground: 0 18% 96%;
+
+    --card: 116 15% 14%;
+    --card-foreground: 0 18% 96%;
+
+    --popover: 116 15% 14%;
+    --popover-foreground: 0 18% 96%;
+
+    --primary: 100 80% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 116 12% 20%;
+    --secondary-foreground: 0 18% 96%;
+
+    --muted: 116 8% 18%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 44 93% 49%;
+    --accent-foreground: 120 48% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 116 8% 25%;
+    --input: 116 8% 25%;
+    --ring: 100 80% 35%;
+
+    /* Scrollbar Colors */
+    --scrollbar-thumb: 100 80% 38%;
+    --scrollbar-track: 116 20% 8%;
+    --scrollbar-thumb-hover: 100 80% 48%;
+
+    /* Analytics Theme Colors */
+    --analytics-primary: 100 80% 35%;
+    --analytics-secondary: 116 12% 20%;
+    --analytics-accent: 44 93% 49%;
+    --analytics-chart-1: 100 80% 50%;
+    --analytics-chart-2: 44 93% 55%;
+    --analytics-chart-3: 116 51% 40%;
+    --analytics-chart-4: 44 70% 60%;
+    --analytics-chart-5: 100 55% 55%;
+
+    /* Best Seller & Sold Badge Theme - Olive */
+    --best-seller-bg: 100 80% 35%;
+    --best-seller-text: 0 0% 100%;
+    --sold-count-bg: 44 93% 49%;
+    --sold-count-text: 120 48% 10%;
+    --badge-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.6);
+
+    /* Delivery Summary Card Colors - Olive */
+    --delivery-card-assigned: 210 38% 22%;
+    --delivery-card-accepted: 100 68% 22%;
+    --delivery-card-rejected: 0 70% 22%;
+    --delivery-card-picked: 44 93% 20%;
+    --delivery-card-in-transit: 266 100% 22%;
+    --delivery-card-delivered: 116 76% 20%;
+
+    /* Stock Management Card Colors - Olive */
+    --stock-card-physical-products: 210 38% 18%;
+    --stock-card-variants: 100 68% 18%;
+    --stock-card-total-stock: 116 76% 18%;
+    --stock-card-low-stock: 44 93% 18%;
+    --stock-card-out-of-stock: 0 70% 18%;
+  }
+
+  /* ========================
+   ROSE PEACH THEME
+======================== */
+
+  .rose,
+  .theme-rose {
+    --background: 56 100% 96%;
+    --foreground: 120 48% 13%;
+
+    --card: 44 80% 90%;
+    --card-foreground: 120 48% 13%;
+
+    --popover: 44 80% 90%;
+    --popover-foreground: 120 48% 13%;
+
+    --primary: 100 80% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 116 51% 26%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 44 60% 80%;
+    --muted-foreground: 120 20% 30%;
+
+    --accent: 44 93% 49%;
+    --accent-foreground: 120 48% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 100 20% 75%;
+    --input: 100 20% 75%;
+    --ring: 100 80% 35%;
+
+    /* Scrollbar Colors */
+    --scrollbar-thumb: 100 80% 40%;
+    --scrollbar-track: 56 100% 92%;
+    --scrollbar-thumb-hover: 100 80% 50%;
+
+    /* Analytics Theme Colors */
+    --analytics-primary: 100 80% 35%;
+    --analytics-secondary: 116 51% 26%;
+    --analytics-accent: 44 93% 49%;
+    --analytics-chart-1: 100 80% 40%;
+    --analytics-chart-2: 44 93% 49%;
+    --analytics-chart-3: 116 51% 35%;
+    --analytics-chart-4: 44 70% 60%;
+    --analytics-chart-5: 100 55% 50%;
+
+    /* Best Seller & Sold Badge Theme - Rose */
+    --best-seller-bg: 100 80% 35%;
+    --best-seller-text: 0 0% 100%;
+    --sold-count-bg: 44 93% 49%;
+    --sold-count-text: 120 48% 10%;
+    --badge-shadow: 0 4px 6px -1px rgb(72 161 17 / 0.2);
+  }
+}
+
+/* ========================
+   GLOBAL APPLY
+======================== */
+
+@layer base {
+  * {
+    /* eslint-disable-next-line at-rule-no-unknown */
+    @apply border-border;
+  }
+
+  body {
+    /* eslint-disable-next-line at-rule-no-unknown */
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ========================
+   THEME UTILITIES
+======================== */
+
+@layer utilities {
+  .btn-primary {
+    /* eslint-disable-next-line at-rule-no-unknown */
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition;
+  }
+
+  .btn-secondary {
+    @apply text-white transition-all duration-200 ease-in-out;
+    background-color: #F2B50B;
+  }
+
+  .btn-secondary:hover {
+    @apply scale-105 shadow-lg;
+    background-color: #d99f08;
+  }
+
+  .btn-accent {
+    @apply text-white transition-all duration-200 ease-in-out;
+    background-color: #25671E;
+  }
+
+  .btn-outline {
+    /* eslint-disable-next-line at-rule-no-unknown */
+    @apply border border-border bg-background text-foreground hover:bg-primary/80 hover:text-primary-foreground transition;
+  }
+
+  .btn-danger {
+    /* eslint-disable-next-line at-rule-no-unknown */
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90 transition;
+  }
+
+  .input-theme {
+    /* eslint-disable-next-line at-rule-no-unknown */
+    @apply bg-background text-foreground border-border;
+  }
+
+  .card-theme {
+    /* eslint-disable-next-line at-rule-no-unknown */
+    @apply bg-card text-card-foreground border-border;
+  }
+
+  .product-card {
+    @apply transition duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .slider-nav-btn {
+    @apply rounded-xl border border-border bg-primary text-primary-foreground shadow-sm;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .slider-nav-btn:hover {
+    @apply bg-primary/90;
+  }
+
+  /* Best Seller & Sold Badge Utilities */
+  .best-seller-badge {
+    background: hsl(var(--best-seller-bg));
+    color: hsl(var(--best-seller-text));
+    box-shadow: var(--badge-shadow);
+  }
+
+  .sold-count-badge {
+    background: hsl(var(--sold-count-bg));
+    color: hsl(var(--sold-count-text));
+    box-shadow: var(--badge-shadow);
+  }
+
+  /* Delivery Proof Utilities */
+  .delivery-proof-header {
+    background: hsl(var(--delivery-proof-bg));
+    color: hsl(var(--delivery-proof-text));
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .delivery-pin-container {
+    background: hsl(var(--delivery-pin-bg));
+  }
+
+  .delivery-pin-label {
+    color: hsl(var(--delivery-pin-text));
+  }
+
+  .delivery-pin-value {
+    color: hsl(var(--delivery-pin-text));
+  }
+
+  .delivery-link-container {
+    background: hsl(var(--delivery-link-bg));
+  }
+
+  .delivery-link-label {
+    color: hsl(var(--delivery-link-text));
+  }
+
+  .delivery-link-value {
+    color: hsl(var(--delivery-link-text));
+  }
+
+  .delivery-status-container {
+    background: hsl(var(--delivery-status-bg));
+  }
+
+  .delivery-status-label {
+    color: hsl(var(--delivery-status-text));
+  }
+
+  /* Delivery Summary Card Classes */
+  .delivery-summary-card {
+    background-color: hsl(var(--card));
+  }
+
+  .delivery-summary-card-assigned {
+    background-color: hsl(var(--delivery-card-assigned));
+  }
+
+  .delivery-summary-card-accepted {
+    background-color: hsl(var(--delivery-card-accepted));
+  }
+
+  .delivery-summary-card-rejected {
+    background-color: hsl(var(--delivery-card-rejected));
+  }
+
+  .delivery-summary-card-picked-from-warehouse {
+    background-color: hsl(var(--delivery-card-picked));
+  }
+
+  .delivery-summary-card-in-transit {
+    background-color: hsl(var(--delivery-card-in-transit));
+  }
+
+  .delivery-summary-card-delivered {
+    background-color: hsl(var(--delivery-card-delivered));
+  }
+
+  /* Stock Management Card Classes */
+  .stock-summary-card-physical-products {
+    background-color: hsl(var(--stock-card-physical-products));
+  }
+
+  .stock-summary-card-variants {
+    background-color: hsl(var(--stock-card-variants));
+  }
+
+  .stock-summary-card-total-stock {
+    background-color: hsl(var(--stock-card-total-stock));
+  }
+
+  .stock-summary-card-low-stock {
+    background-color: hsl(var(--stock-card-low-stock));
+  }
+
+  .stock-summary-card-out-of-stock {
+    background-color: hsl(var(--stock-card-out-of-stock));
+  }
+
+  /* Global Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--scrollbar-track));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--scrollbar-thumb));
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--scrollbar-thumb-hover));
+  }
+
+  /* Firefox scrollbar styles */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
+  }
+}
+
+/* ========================
+   RUBIK FONT UTILITIES
+======================== */
+
+@layer utilities {
+  /* Rubik font family with different weights */
+  .rubik-light {
+    font-family: var(--font-rubik);
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .rubik-regular {
+    font-family: var(--font-rubik);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .rubik-medium {
+    font-family: var(--font-rubik);
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .rubik-semibold {
+    font-family: var(--font-rubik);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .rubik-bold {
+    font-family: var(--font-rubik);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .rubik-extrabold {
+    font-family: var(--font-rubik);
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .rubik-black {
+    font-family: var(--font-rubik);
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  /* Rubik italic variants */
+  .rubik-light-italic {
+    font-family: var(--font-rubik);
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .rubik-italic {
+    font-family: var(--font-rubik);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .rubik-medium-italic {
+    font-family: var(--font-rubik);
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .rubik-semibold-italic {
+    font-family: var(--font-rubik);
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .rubik-bold-italic {
+    font-family: var(--font-rubik);
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .rubik-extrabold-italic {
+    font-family: var(--font-rubik);
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  .rubik-black-italic {
+    font-family: var(--font-rubik);
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  /* Generic rubik class (defaults to regular weight) */
+  .rubik {
+    font-family: var(--font-rubik);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* No scrollbar utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* eCommerce Gradient Utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .gradient-amber {
+    background: var(--gradient-amber);
+  }
+
+  .gradient-primary-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* eCommerce Button Gradients */
+  .btn-gradient-primary {
+    background: var(--gradient-primary);
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gradient-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(72, 161, 17, 0.35);
+  }
+
+  .btn-gradient-premium {
+    background: var(--gradient-premium);
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gradient-premium:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(37, 103, 30, 0.35);
+  }
+
+  .btn-gradient-amber {
+    background: var(--gradient-amber);
+    color: hsl(120 48% 10%);
+    transition: all 0.3s ease;
+  }
+
+  .btn-gradient-amber:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(242, 181, 11, 0.4);
+  }
+}
+
+/* ========================
+   GRADIENT BORDER ANIMATIONS
+======================== */
+
+@supports (property(--border-angle)) {
+  @property --border-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: "<angle>";
+  }
+}
+
+/* ========================
+   SCROLLBAR HIDE ON IDLE
+======================== */
+
+.scrollbar-hide-on-idle {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-hide-on-idle::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+
+.scrollbar-hide-on-idle::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-hide-on-idle::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.scrollbar-hide-on-idle:hover::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+}
+
+.scrollbar-hide-on-idle:hover::-webkit-scrollbar-track {
+  background: hsl(var(--muted) / 0.1);
+}
+
+/* ========================
+   CART BUTTON ANIMATION
+======================== */
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 1.0s ease-in-out;
+}
+
+/* ========================
+   FLYING BIRD ANIMATION
+======================== */
+
+@keyframes flap-left {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(60deg);
+  }
+}
+
+@keyframes flap-right {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(-60deg);
+  }
+}
+
+.animate-flap-left {
+  animation: flap-left 1.25s ease-in-out infinite;
+}
+
+.animate-flap-right {
+  animation: flap-right 1.25s ease-in-out infinite;
+}
+
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(251, 191, 36, 0.6);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.9);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1.2s ease-in-out infinite;
+}

@@ -1,0 +1,5 @@
+ALTER TABLE "Product"
+ADD COLUMN "lowStockThreshold" INTEGER NOT NULL DEFAULT 10;
+
+ALTER TABLE "ProductVariant"
+ADD COLUMN "lowStockThreshold" INTEGER NOT NULL DEFAULT 10;
